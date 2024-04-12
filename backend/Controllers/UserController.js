@@ -53,10 +53,10 @@ export const getUsers = async (req , res , next) => {
 
 export const getUser = async (req, res, next) => {
     try {
-        const id = req.param.id;
+        const id = req.params.id;
         const user = doc(db, 'Users', id);
         const data = await getDoc(user);
-        if(user.exists()){
+        if(data.exists()){
             res.status(200).send(data.data())
         } else {
             res.status(404).send('User not found');
