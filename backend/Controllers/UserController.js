@@ -69,8 +69,8 @@ export const updateUser = async (req, res, next) => {
     try {
       const id = req.params.id;
       const data = req.body;
-      const product = doc(db, 'Users', id);
-      await updateDoc(product, data);
+      const user = doc(db, 'Users', id);
+      await updateDoc(user, data);
       res.status(200).send('user updated successfully');
     } catch (error) {
       res.status(400).send(error.message);
