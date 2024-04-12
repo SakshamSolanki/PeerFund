@@ -5,6 +5,7 @@ class LoanRequests {
         amount,
         interestRate,
         duration,
+        currency,
         status,
     ){
         (this.id = id),
@@ -12,6 +13,7 @@ class LoanRequests {
         (this.amount = amount),
         (this.interestRate = interestRate),
         (this.duration = duration),
+        (this.currency = currency),
         (this.status = status)  
     }
 }

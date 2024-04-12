@@ -38,6 +38,7 @@ export const getLoanRequests = async (req , res , next) => {
                     doc.amount,
                     doc.interestRate,
                     doc.duration,
+                    doc.currency,
                     doc.status
                 );
                 loanRequestsArray.push(loanRequest)
