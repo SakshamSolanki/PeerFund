@@ -1,5 +1,5 @@
 import {firebase} from '../firebase.js';
-import {Product} from '../Models/productModel.js';
+import { User } from '../Models/User.js';
 import {
   getFirestore,
   collection,
@@ -29,7 +29,8 @@ export const getUsers = async (req , res , next) => {
         const usersArray = []
 
         if(users.empty) {
-            res.send(400).send('No Users Foound');
+            res.sendStatus(400);
+            // .send('No Users Foound');
         }else {
             users.forEach((doc) => {
                 const user = new User(
@@ -37,7 +38,7 @@ export const getUsers = async (req , res , next) => {
                     doc.name,
                     doc.phoneNumber,
                     doc.loanRequestsId,
-                    doc.loanAgrementsId,
+                    doc.loanAgreementsId,
                     doc.transactions
                 );
                 usersArray.push(user)
