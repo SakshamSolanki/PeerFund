@@ -25,13 +25,13 @@ export const createLoanRequest = async (req, res, next) => {
 
 export const getLoanRequests = async (req , res , next) => {
     try {
-        const loadnRequests = await getDocs(collection(db, 'LoanRequests'));
+        const loanRequests = await getDocs(collection(db, 'LoanRequests'));
         const loanRequestsArray = []
 
-        if(loadnRequests.empty) {
+        if(loanRequests.empty) {
             res.send(400).send('No Loan Requests Foound');
         }else {
-            loadnRequests.forEach((doc) => {
+            loanRequests.forEach((doc) => {
                 const loanRequest = new LoanRequests(
                     doc.id,
                     doc.userId,
@@ -69,10 +69,20 @@ export const updateLoanRequest = async (req, res, next) => {
     try {
       const id = req.params.id;
       const data = req.body;
-      const loanRequest = doc(db, 'loanRequests', id);
+      const loanRequest = doc(db, 'LoanRequests', id);
       await updateDoc(loanRequest, data);
-      res.status(200).send('LoanRequest updated successfully');
+      res.status(200).send('Loan Request updated successfully');
     } catch (error) {
       res.status(400).send(error.message);
     }
   };
+
+export const deleteLoanRequest = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        await deleteDoc(doc(db, 'LoanRequests', id));
+        res.status(200).send('Loan Request deleted successfully');
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+};

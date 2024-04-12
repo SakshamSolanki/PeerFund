@@ -77,7 +77,7 @@ export const updateUser = async (req, res, next) => {
     }
   };
 
-  export const deleteProduct = async (req, res, next) => {
+  export const deleteUser = async (req, res, next) => {
     try {
       const id = req.params.id;
       await deleteDoc(doc(db, 'Users', id));
