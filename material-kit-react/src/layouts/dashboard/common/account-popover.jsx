@@ -28,20 +28,45 @@ import { account } from 'src/_mock/account';
 //   },
 // ];
 
+// const MENU_OPTIONS2 = [
+//   {
+//     label: 'Polygon',
+//     icon: 'eva:home-fill',
+//   },
+//   {
+//     label: 'Hive',
+//     icon: 'eva:person-fill',
+//   },
+//   {
+//     label: 'Ethereum',
+//     icon: 'eva:settings-2-fill',
+//   },
+// ];
 const MENU_OPTIONS2 = [
-  {
-    label: 'Polygon',
-    icon: 'eva:home-fill',
-  },
+  
   {
     label: 'Hive',
-    icon: 'eva:person-fill',
+    icon: 'PersonIcon',
+    value: '0 Tokens' // Example value
+  },
+  {
+    label: 'Polygon',
+    icon: 'HomeIcon',
+    value: '0 Tokens' // Example value
+  },
+  {
+    label: 'Flow',
+    icon: 'HomeIcon',
+    value: '0 Tokens' // Example value
   },
   {
     label: 'Ethereum',
-    icon: 'eva:settings-2-fill',
+    icon: 'SettingsIcon',
+    value: '0 Tokens' // Example value
   },
+  
 ];
+
 
 // ----------------------------------------------------------------------
 
@@ -115,11 +140,21 @@ export default function AccountPopover() {
           </MenuItem>
         ))} */}
 
-        {MENU_OPTIONS2.map((option) => (
+        {/* {MENU_OPTIONS2.map((option) => (
           <MenuItem key={option.label} onClick={handleClose}>
             {option.label}
           </MenuItem>
-        ))}
+        ))} */}
+        {MENU_OPTIONS2.map((option) => (
+        <MenuItem key={option.label} onClick={handleClose}>
+          <Typography variant="body1" component="span" style={{ flex: 1 }}>
+            {option.label}
+          </Typography>
+          <Typography variant="body2" color="text.secondary">
+            {option.value}
+          </Typography>
+        </MenuItem>
+      ))}
 
         <Divider sx={{ borderStyle: 'dashed', m: 0 }} />
 
