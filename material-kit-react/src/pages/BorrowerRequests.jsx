@@ -131,12 +131,12 @@ import {
   TableBody,
   TableCell,
   TableContainer,
-  TableHead,
   TableRow,
+  TableHead,
   Paper,
   Button,
-  Typography,
-  Link
+  Link,
+  Typography
 } from '@mui/material';
 
 function BorrowerRequests() {
