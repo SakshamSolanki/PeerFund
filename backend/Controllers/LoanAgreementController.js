@@ -50,6 +50,7 @@ export const getLoanAgreements = async (req , res , next) => {
                     doc.amount,
                     doc.interestRate,
                     doc.duration,
+                    doc.currency,
                     doc.status
                 );
                 loanAgrementsArray.push(loanAgreement)

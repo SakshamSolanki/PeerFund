@@ -5,17 +5,19 @@ class User {
         email, 
         phoneNumber,
         loanRequestsId,
-        loanAgrementsId,
+        loanAgreementsId,
+        funds,
         transactions
     ){
-        (this.id = id),
-        (this.name = name)
-        (this.email = email)
-        (this.phoneNumber = phoneNumber)
-        (this.loanAgrementsId = loanAgrementsId)
-        (this.loanRequestsId = loanRequestsId)
-        (this.transactions = transactions)
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
+        this.loanAgreementsId = loanAgreementsId;
+        this.loanRequestsId = loanRequestsId;
+        this.funds = funds;
+        this.transactions = transactions;
     }
 }
 
-export default User;
+export { User };
