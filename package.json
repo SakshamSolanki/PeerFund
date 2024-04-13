@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@hivechain/dhive": "^0.13.4",
     "hivesigner": "^3.3.4"
   }
 }
