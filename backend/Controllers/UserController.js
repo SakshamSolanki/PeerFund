@@ -39,6 +39,7 @@ export const getUsers = async (req , res , next) => {
                     doc.phoneNumber,
                     doc.loanRequestsId,
                     doc.loanAgreementsId,
+                    doc.funds,
                     doc.transactions
                 );
                 usersArray.push(user)

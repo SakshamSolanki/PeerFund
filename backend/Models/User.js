@@ -6,6 +6,7 @@ class User {
         phoneNumber,
         loanRequestsId,
         loanAgreementsId,
+        funds,
         transactions
     ){
         this.id = id;
@@ -14,6 +15,7 @@ class User {
         this.phoneNumber = phoneNumber;
         this.loanAgreementsId = loanAgreementsId;
         this.loanRequestsId = loanRequestsId;
+        this.funds = funds;
         this.transactions = transactions;
     }
 }
