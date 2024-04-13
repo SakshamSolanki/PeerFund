@@ -2,15 +2,32 @@ import React, { useState } from 'react';
 import { Card, CardContent, Typography, CardActions, Button, Menu, MenuItem } from '@mui/material';
 
 function FinanceCards() {
-  const [anchorEl, setAnchorEl] = useState(null);
-  const open = Boolean(anchorEl);
+  // const [anchorEl, setAnchorEl] = useState(null);
+  // const open = Boolean(anchorEl);
 
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
+  // const handleClick = (event) => {
+  //   setAnchorEl(event.currentTarget);
+  // };
+
+  // const handleClose = () => {
+  //   setAnchorEl(null);
+  // };
+  const [anchorEls, setAnchorEls] = useState({
+    hive: null,
+    polygon: null,
+    flow: null,
+    ethereum: null,
+    fiat: null
+  });
+
+  // Handle Click
+  const handleClick = (event, currency) => {
+    setAnchorEls({ ...anchorEls, [currency]: event.currentTarget });
   };
 
-  const handleClose = () => {
-    setAnchorEl(null);
+  // Handle Close
+  const handleClose = (currency) => {
+    setAnchorEls({ ...anchorEls, [currency]: null });
   };
 
   return (
@@ -46,7 +63,7 @@ function FinanceCards() {
       </Card>
 
       {/* Add Money Card */}
-      <Card sx={{ maxWidth: 345 }}>
+      {/* <Card sx={{ maxWidth: 345 }}>
         <CardContent>
           <Typography variant="h5" component="div">
             Add Money
@@ -81,7 +98,45 @@ function FinanceCards() {
             <MenuItem onClick={handleClose}>Fiat Currencies</MenuItem>
           </Menu>
         </CardActions>
-      </Card>
+      </Card> */}
+      <Card sx={{ maxWidth: 345 }}>
+      <CardContent>
+        <Typography variant="h5" component="div">
+          Add Money
+        </Typography>
+        <Typography variant="body2">
+          Select the currency or token to add to your account.
+        </Typography>
+      </CardContent>
+      <CardActions>
+        {['hive', 'polygon', 'flow', 'ethereum', 'fiat'].map(currency => (
+          <React.Fragment key={currency}>
+            <Button
+              id={`${currency}-button`}
+              aria-controls={anchorEls[currency] ? `${currency}-menu` : undefined}
+              aria-haspopup="true"
+              aria-expanded={anchorEls[currency] ? 'true' : undefined}
+              onClick={(event) => handleClick(event, currency)}
+            >
+              {currency.charAt(0).toUpperCase() + currency.slice(1)}
+            </Button>
+            <Menu
+              id={`${currency}-menu`}
+              anchorEl={anchorEls[currency]}
+              open={Boolean(anchorEls[currency])}
+              onClose={() => handleClose(currency)}
+              MenuListProps={{
+                'aria-labelledby': `${currency}-button`,
+              }}
+            >
+              <MenuItem onClick={() => handleClose(currency)}>Destination 1</MenuItem>
+              <MenuItem onClick={() => handleClose(currency)}>Destination 2</MenuItem>
+              <MenuItem onClick={() => handleClose(currency)}>Destination 3</MenuItem>
+            </Menu>
+          </React.Fragment>
+        ))}
+      </CardActions>
+    </Card>
     </div>
   );
 }

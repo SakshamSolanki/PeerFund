@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async';
 
 import { UserView } from 'src/sections/user/view';
+import AccountSetupForm from './AccountSetupForm';
 
 // ----------------------------------------------------------------------
 
@@ -11,7 +12,8 @@ export default function UserPage() {
         <title> User | Minimal UI </title>
       </Helmet>
 
-      <UserView />
+      {/* <UserView /> */}
+      <AccountSetupForm/>
     </>
   );
 }

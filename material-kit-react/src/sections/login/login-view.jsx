@@ -128,7 +128,7 @@ export default function LoginView() {
             >
               {/* <Iconify 
               icon="" color="#1877F2" /> */}
-              <img src="https://images.app.goo.gl/y3xkymwv8kXupdi3A" alt="Hive.io"/>
+              Hive.io
 
 
               
