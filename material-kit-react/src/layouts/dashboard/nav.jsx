@@ -93,7 +93,7 @@ export default function Nav({ openNav, onCloseNav }) {
           variant="contained"
           color="inherit"
         >
-          Upgrade to Pro
+          {/* Upgrade to Pro */}  
         </Button>
       </Stack>
     </Box>

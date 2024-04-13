@@ -28,17 +28,17 @@ import Scrollbar from 'src/components/scrollbar';
 const NOTIFICATIONS = [
   {
     id: faker.string.uuid(),
-    title: 'Your order is placed',
-    description: 'waiting for shipping',
+    title: 'Your loan repayment is pending',
+    description: 'your 50$ due',
     avatar: null,
-    type: 'order_placed',
+    type: 'order_shipped',
     createdAt: set(new Date(), { hours: 10, minutes: 30 }),
     isUnRead: true,
   },
   {
     id: faker.string.uuid(),
     title: faker.person.fullName(),
-    description: 'answered to your comment on the Minimal',
+    description: 'New loan request',
     avatar: '/assets/images/avatars/avatar_2.jpg',
     type: 'friend_interactive',
     createdAt: sub(new Date(), { hours: 3, minutes: 30 }),
@@ -64,8 +64,8 @@ const NOTIFICATIONS = [
   },
   {
     id: faker.string.uuid(),
-    title: 'Delivery processing',
-    description: 'Your order is being shipped',
+    title: 'Your loan repayment is pending',
+    description: '',
     avatar: null,
     type: 'order_shipped',
     createdAt: sub(new Date(), { days: 3, hours: 3, minutes: 30 }),

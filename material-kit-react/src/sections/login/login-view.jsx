@@ -78,7 +78,7 @@ export default function LoginView() {
       sx={{
         ...bgGradient({
           color: alpha(theme.palette.background.default, 0.9),
-          imgUrl: '/assets/background/overlay_4.jpg',
+          imgUrl: '/assets/background/_4.jpg',
         }),
         height: 1,
       }}
@@ -99,7 +99,7 @@ export default function LoginView() {
             maxWidth: 420,
           }}
         >
-          <Typography variant="h4">Sign in to Minimal</Typography>
+          <Typography variant="h4">Sign in to PeerFund</Typography>
 
           <Typography variant="body2" sx={{ mt: 2, mb: 5 }}>
             Don’t have an account?
@@ -126,7 +126,12 @@ export default function LoginView() {
               variant="outlined"
               sx={{ borderColor: alpha(theme.palette.grey[500], 0.16) }}
             >
-              <Iconify icon="eva:facebook-fill" color="#1877F2" />
+              {/* <Iconify 
+              icon="" color="#1877F2" /> */}
+              <img src="https://images.app.goo.gl/y3xkymwv8kXupdi3A" alt="Hive.io"/>
+
+
+              
             </Button>
 
             <Button

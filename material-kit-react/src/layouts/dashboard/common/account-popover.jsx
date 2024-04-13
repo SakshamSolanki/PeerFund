@@ -13,17 +13,32 @@ import { account } from 'src/_mock/account';
 
 // ----------------------------------------------------------------------
 
-const MENU_OPTIONS = [
+// const MENU_OPTIONS = [
+//   {
+//     label: 'Home',
+//     icon: 'eva:home-fill',
+//   },
+//   {
+//     label: 'Profile',
+//     icon: 'eva:person-fill',
+//   },
+//   {
+//     label: 'Settings',
+//     icon: 'eva:settings-2-fill',
+//   },
+// ];
+
+const MENU_OPTIONS2 = [
   {
-    label: 'Home',
+    label: 'Polygon',
     icon: 'eva:home-fill',
   },
   {
-    label: 'Profile',
+    label: 'Hive',
     icon: 'eva:person-fill',
   },
   {
-    label: 'Settings',
+    label: 'Ethereum',
     icon: 'eva:settings-2-fill',
   },
 ];
@@ -94,7 +109,13 @@ export default function AccountPopover() {
 
         <Divider sx={{ borderStyle: 'dashed' }} />
 
-        {MENU_OPTIONS.map((option) => (
+        {/* {MENU_OPTIONS.map((option) => (
+          <MenuItem key={option.label} onClick={handleClose}>
+            {option.label}
+          </MenuItem>
+        ))} */}
+
+        {MENU_OPTIONS2.map((option) => (
           <MenuItem key={option.label} onClick={handleClose}>
             {option.label}
           </MenuItem>

@@ -13,17 +13,17 @@ const navConfig = [
     icon: icon('ic_analytics'),
   },
   {
-    title: 'user',
+    title: 'Account',
     path: '/user',
     icon: icon('ic_user'),
   },
   {
-    title: 'product',
+    title: 'Loan Request',
     path: '/products',
     icon: icon('ic_cart'),
   },
   {
-    title: 'blog',
+    title: 'My Loan',
     path: '/blog',
     icon: icon('ic_blog'),
   },
@@ -33,8 +33,8 @@ const navConfig = [
     icon: icon('ic_lock'),
   },
   {
-    title: 'Not found',
-    path: '/404',
+    title: 'Add Funds',
+    path: '/addfunds',
     icon: icon('ic_disabled'),
   },
 ];
