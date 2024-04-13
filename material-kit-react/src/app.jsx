@@ -12,8 +12,18 @@ export default function App() {
   useScrollToTop();
 
   return (
+    <>
+      <script src="./hive.min.js"></script>
+    <script>
+    hive.api.getAccounts(['mahdiyari', 'hiveio'], function(err, response){
+        console.log(err, response)
+    });
+    </script>
+    
+
     <ThemeProvider>
       <Router />
     </ThemeProvider>
+    </>
   );
 }
